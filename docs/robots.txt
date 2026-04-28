@@ -1,0 +1,31 @@
+# Robots.txt for Mokal Builder Website
+# This file tells search engine crawlers which pages to crawl and which to avoid
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private directories (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Allow all major pages
+Allow: /
+Allow: /services
+Allow: /about
+Allow: /portfolio
+Allow: /contact
+Allow: /estimator
+Allow: /team
+Allow: /faq
+
+# Allow CSS, JS, and images for better indexing
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://mokalbuilder.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1

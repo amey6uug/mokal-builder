@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokal Builder - Premium Construction Excellence | Residential & Commercial Builders in Mumbai</title>
+    <meta name="description" content="Mokal Builder is Mumbai's premier construction company specializing in residential, commercial, renovation, interior design, real estate development, and land development services. 15+ years of excellence in building your dreams.">
+    <meta name="keywords" content="construction company Mumbai, residential construction, commercial construction, home renovation, interior design, real estate development, land development, premium builders Mumbai, Mokal Builder">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0F2B5A;
+            --primary-dark: #0A1A35;
+            --primary-light: #1e40af;
+            --accent: #F5A623;
+            --accent-light: #f8b75e;
+            --bg-white: #ffffff;
+            --bg-light: #F9FAFB;
+            --bg-lighter: #F9FAFB;
+            --text-dark: #111827;
+            --text-gray: #4B5563;
+            --text-light-gray: #6b7280;
+            --border-gray: #E5E7EB;
+            --success: #25D366;
+            --error: #DC2626;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+            padding: 18px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+            padding: 12px 0;
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--bg-white);
+            font-size: 1.2rem;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-dark);
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--bg-white);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.2);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 50%, #fff8f0 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(15, 43, 90, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 166, 35, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, var(--bg-white), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 950px;
+            padding: 50px;
+            animation: fadeInUp 1s ease-out;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-weight: 700;
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(245, 166, 35, 0.1);
+            border-radius: 50px;
+            border: 1px solid rgba(245, 166, 35, 0.2);
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 28px;
+            line-height: 1.15;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.35rem;
+            color: var(--text-gray);
+            margin-bottom: 45px;
+            font-weight: 400;
+            line-height: 1.7;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 18px 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--bg-white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 20px rgba(15, 43, 90, 0.25);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(15, 43, 90, 0.35);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            padding: 18px 50px;
+            background: var(--bg-white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--primary);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .btn-secondary:hover::before {
+            width: 100%;
+        }
+
+        .btn-secondary:hover {
+            color: var(--bg-white);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(15, 43, 90, 0.2);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* IMAGE SLIDER */
+        .slider-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-light) 100%);
+        }
+
+        .slider-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.15),
+                0 10px 30px rgba(15, 43, 90, 0.1);
+        }
+
+        .slide {
+            display: none;
+            position: relative;
+            width: 100%;
+            animation: fadeInSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide.fade {
+            animation: fadeInSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(15, 43, 90, 0.95), rgba(15, 43, 90, 0.4));
+            color: white;
+            padding: 60px 40px 40px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeInSlide {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Slider Controls */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 60px;
+            height: 60px;
+            margin-top: -30px;
+            padding: 0;
+            color: white;
+            font-weight: bold;
+            font-size: 28px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 50%;
+            background: rgba(15, 43, 90, 0.7);
+            border: 2px solid rgba(245, 166, 35, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .prev:hover, .next:hover {
+            background: rgba(245, 166, 35, 0.95);
+            border-color: var(--bg-white);
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(245, 166, 35, 0.6);
+        }
+
+        .prev:active, .next:active {
+            transform: scale(1.05);
+        }
+
+        .prev {
+            left: 30px;
+        }
+
+        .next {
+            right: 30px;
+        }
+
+        /* Dots */
+        .dots-container {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(249, 250, 251, 0.95), rgba(255, 255, 255, 0.95));
+            border-radius: 0 0 20px 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 14px;
+            width: 14px;
+            margin: 0 10px;
+            background-color: #cbd5e1;
+            border-radius: 50%;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+
+        .dot.active {
+            background-color: var(--accent);
+            transform: scale(1.4);
+            border-color: rgba(245, 166, 35, 0.3);
+            box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.2);
+        }
+
+        .dot:hover {
+            background-color: var(--accent);
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .hero-content {
+                padding: 35px 25px;
+            }
+
+            .slide img {
+                height: 400px;
+            }
+
+            .slide-caption {
+                font-size: 1.3rem;
+                padding: 35px 25px 25px;
+            }
+
+            .prev, .next {
+                width: 50px;
+                height: 50px;
+                margin-top: -25px;
+                font-size: 22px;
+            }
+
+            .prev {
+                left: 15px;
+            }
+
+            .next {
+                right: 15px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .service-card {
+                padding: 35px 28px;
+            }
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 80px 40px;
+            background: 
+                linear-gradient(135deg, rgba(15, 43, 90, 0.03) 0%, transparent 50%),
+                linear-gradient(180deg, var(--bg-light) 0%, var(--bg-white) 100%);
+            border-top: 3px solid var(--accent);
+            border-bottom: 1px solid var(--border-gray);
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            box-shadow: 0 0 20px rgba(245, 166, 35, 0.5);
+        }
+
+        .stat-card {
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 40px rgba(15, 43, 90, 0.1);
+            border-color: var(--accent);
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--bg-white);
+        }
+
+        .section-title {
+            font-size: 3.2rem;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 70px;
+            margin-top: 30px;
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-light) 100%);
+            border: 2px solid var(--border-gray);
+            border-radius: 16px;
+            padding: 45px 35px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.05),
+                0 1px 3px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+            transform: scaleX(0);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-white);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 20px 50px rgba(15, 43, 90, 0.15),
+                0 10px 25px rgba(245, 166, 35, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            display: inline-block;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-card p {
+            color: var(--text-light-gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .service-cta {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .service-cta:hover {
+            transform: translateX(5px);
+            color: var(--primary-dark);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 80px 40px;
+            background: var(--bg-lighter);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-gray);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.1);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 3px solid var(--accent);
+            padding-top: 20px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-white);
+            font-weight: 700;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .author-title {
+            font-size: 0.85rem;
+            color: var(--text-light-gray);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--primary-dark);
+            border-top: 3px solid var(--accent);
+            padding: 60px 40px 20px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            padding-right: 20px;
+            border-right: 2px solid rgba(245, 166, 35, 0.15);
+        }
+
+        .footer-section:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 2px solid rgba(245, 166, 35, 0.3);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* WHATSAPP */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            z-index: 999;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(37, 211, 102, 0.6); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .navbar-container { padding: 0 20px; }
+            .nav-links { gap: 20px; }
+            .nav-link { font-size: 0.9rem; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="/images/logos/logo.jpg" alt="Mokal Builder Logo"></div>
+                <div class="logo-text">
+                    <h1>Mokal Builder</h1>
+                    <p>PREMIUM CONSTRUCTIONS</p>
+                </div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="html/services.html" class="nav-link">Services</a>
+                <a href="html/about.html" class="nav-link">About</a>
+                <a href="html/portfolio.html" class="nav-link">Portfolio</a>
+                <a href="html/faq.html" class="nav-link">FAQ</a>
+                <a href="html/contact.html" class="nav-link">Contact</a>
+                <a href="html/estimator.html" class="btn-nav">Get Estimate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-subtitle">Welcome to Excellence</div>
+            <h1 class="hero-title">Premium Construction Solutions</h1>
+            <p class="hero-description">Transforming Visions Into Exceptional Structures. 15+ Years of Excellence, 500+ Completed Projects.</p>
+        </div>
+    </section>
+
+    <!-- IMAGE SLIDER -->
+    <section class="slider-section">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide fade">
+                    <img src="/images/projects/residential-model-1.jpg" alt="Modern Residential Construction">
+                    <div class="slide-caption">Modern Residential Construction</div>
+                </div>
+                <div class="slide fade">
+                    <img src="/images/projects/residential-model-2.jpg" alt="Premium Villa Design">
+                    <div class="slide-caption">Premium Villa Design</div>
+                </div>
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop" alt="Commercial Building">
+                    <div class="slide-caption">Commercial Excellence</div>
+                </div>
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=600&fit=crop" alt="Interior Design">
+                    <div class="slide-caption">Premium Interior Design</div>
+                </div>
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&h=600&fit=crop" alt="Architecture">
+                    <div class="slide-caption">Innovative Architecture</div>
+                </div>
+
+                <!-- Navigation arrows -->
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+
+            <!-- Dots for slide indicators -->
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+        <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">Satisfied Clients</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Premium Services</h2>
+        <p class="section-subtitle">Comprehensive construction solutions tailored to your specific needs</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <h3>Residential Construction</h3>
+                <p>Luxury homes and residential complexes designed with precision and crafted with premium materials. From concept to completion.</p>
+                <a href="html/services.html" class="service-cta">Explore Service →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-building"></i></div>
+                <h3>Commercial Construction</h3>
+                <p>Professional commercial projects including office towers, retail spaces, and mixed-use developments with modern architecture.</p>
+                <a href="html/services.html" class="service-cta">Explore Service →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hammer"></i></div>
+                <h3>Renovation & Remodeling</h3>
+                <p>Transform existing spaces with contemporary designs and quality upgrades. Minimal disruption, maximum elegance.</p>
+                <a href="html/services.html" class="service-cta">Explore Service →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-palette"></i></div>
+                <h3>Interior Design</h3>
+                <p>Bespoke interior design services creating functional, beautiful spaces that reflect your style and personality.</p>
+                <a href="html/services.html" class="service-cta">Explore Service →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-chart-gantt"></i></div>
+                <h3>Project Management</h3>
+                <p>End-to-end project management ensuring timely delivery, quality assurance, and transparent communication.</p>
+                <a href="html/services.html" class="service-cta">Explore Service →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-map"></i></div>
+                <h3>Real Estate Development</h3>
+                <p>Complete real estate solutions from property acquisition to final sales. Comprehensive market analysis and strategic planning.</p>
+                <a href="html/services.html" class="service-cta">Explore Service →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-location-dot"></i></div>
+                <h3>Land Development</h3>
+                <p>Transform raw land into ready-to-build plots with complete infrastructure, utilities, and legal compliance services.</p>
+                <a href="html/services.html" class="service-cta">Explore Service →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <h2 class="section-title">Client Testimonials</h2>
+        <p class="section-subtitle">Hear from our satisfied clients about their experience with Mokal Builder</p>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Mokal Builder exceeded our expectations. Their attention to detail and professional approach made our dream home a reality. Highly recommended!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AK</div>
+                    <div>
+                        <div class="author-name">Amit Kumar</div>
+                        <div class="author-title">Homeowner</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Professional, reliable, and transparent. They completed our commercial project on time and within budget. Outstanding team!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">PR</div>
+                    <div>
+                        <div class="author-name">Priya Sharma</div>
+                        <div class="author-title">Business Owner</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"From design consultation to final handover, every step was seamless. Their expertise and dedication are unmatched."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RJ</div>
+                    <div>
+                        <div class="author-name">Rajesh Joshi</div>
+                        <div class="author-title">Developer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>About Mokal Builder</h4>
+                <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.8;">Leading construction and real estate development company specializing in luxury residential, commercial construction, real estate development, and land development with 15+ years of excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="html/services.html">Services</a></li>
+                    <li><a href="html/about.html">About</a></li>
+                    <li><a href="html/portfolio.html">Portfolio</a></li>
+                    <li><a href="html/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="html/services.html">Residential Construction</a></li>
+                    <li><a href="html/services.html">Commercial Projects</a></li>
+                    <li><a href="html/services.html">Renovation Services</a></li>
+                    <li><a href="html/services.html">Interior Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i>+91-9876543210</p>
+                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 8px;">📧 info@mokalbuilder.com</p>
+                <p style="color: rgba(255, 255, 255, 0.8);">📍 Mumbai, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mokal Builder. All rights reserved. | Premium Construction Excellence</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/919876543210?text=Hi%20Mokal%20Builder,%20I'm%20interested%20in%20your%20construction%20services" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // Image Slider Functions
+        let slideIndex = 1;
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.getElementsByClassName('slide');
+            const dots = document.getElementsByClassName('dot');
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+
+            slides[slideIndex - 1].style.display = 'block';
+            dots[slideIndex - 1].classList.add('active');
+        }
+
+        // Initialize slider
+        showSlide(1);
+
+        // Auto-advance slider every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 3000);
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

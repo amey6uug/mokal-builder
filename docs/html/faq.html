@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Frequently Asked Questions | Mokal Builder</title>
+    <meta name="description" content="Find answers to common questions about Mokal Builder's construction services, timelines, pricing, and project processes. Get clarity on residential, commercial, and real estate projects.">
+    <meta name="keywords" content="construction FAQ, building questions, Mokal Builder questions, construction timeline, project costs">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0F2B5A;
+            --primary-dark: #0A1A35;
+            --primary-light: #1e40af;
+            --accent: #F5A623;
+            --accent-light: #f8b75e;
+            --bg-white: #ffffff;
+            --bg-light: #F9FAFB;
+            --text-dark: #111827;
+            --text-gray: #4B5563;
+            --border-gray: #E5E7EB;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+            padding: 18px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+            padding: 12px 0;
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--bg-white);
+            font-size: 1.2rem;
+        }
+        
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--bg-white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(15, 43, 90, 0.2);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.2);
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 180px 40px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--bg-white);
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* SECTIONS */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+        }
+
+        /* FAQ */
+        .faq-categories {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .category-btn {
+            padding: 12px 25px;
+            background: var(--bg-light);
+            border: 2px solid var(--border-gray);
+            border-radius: 50px;
+            color: var(--text-gray);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary);
+            color: var(--bg-white);
+            border-color: var(--primary);
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            padding: 0 30px;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 30px 25px 30px;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 80px 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            color: var(--bg-white);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            padding: 15px 40px;
+            background: var(--bg-white);
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--bg-white);
+            padding: 60px 40px 30px;
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--bg-white);
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--bg-white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* WHATSAPP */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+        <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="/images/logos/logo.jpg" alt="Mokal Builder Logo"></div>
+                <div class="logo-text">
+                    <h1>Mokal Builder</h1>
+                    <p>PREMIUM CONSTRUCTIONS</p>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="html/services.html" class="nav-link">Services</a>
+                <a href="html/about.html" class="nav-link">About</a>
+                <a href="html/portfolio.html" class="nav-link">Portfolio</a>
+                <a href="html/faq.html" class="nav-link">FAQ</a>
+                <a href="html/contact.html" class="nav-link">Contact</a>
+                <a href="html/estimator.html" class="btn-nav">Get Estimate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Frequently Asked Questions</h1>
+            <p class="hero-description">Find answers to common questions about our services, processes, and projects</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <div class="container">
+        <h2 class="section-title">Got Questions? We've Got Answers</h2>
+        <p class="section-subtitle">Browse through our most commonly asked questions</p>
+
+        <div class="faq-categories">
+            <button class="category-btn active" onclick="filterFAQ('all')">All Questions</button>
+            <button class="category-btn" onclick="filterFAQ('general')">General</button>
+            <button class="category-btn" onclick="filterFAQ('residential')">Residential</button>
+            <button class="category-btn" onclick="filterFAQ('commercial')">Commercial</button>
+            <button class="category-btn" onclick="filterFAQ('pricing')">Pricing</button>
+            <button class="category-btn" onclick="filterFAQ('timeline')">Timeline</button>
+        </div>
+
+        <div class="faq-grid">
+            <!-- General FAQs -->
+            <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What services does Mokal Builder offer?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We offer comprehensive construction services including Residential Construction, Commercial Construction, Renovation & Remodeling, Interior Design, Project Management, Real Estate Development, and Land Development. Each service is customized to meet your specific requirements with premium quality standards.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How long has Mokal Builder been in business?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Mokal Builder was founded in 2008 and has over 15 years of experience in the construction industry. We've successfully completed numerous residential, commercial, and real estate development projects across Mumbai and surrounding areas.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What areas do you serve?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Our primary service area is Mumbai and the greater Mumbai region. However, we also undertake large-scale projects in other major cities across Maharashtra. Contact us to discuss your project location.
+                </div>
+            </div>
+
+            <!-- Residential FAQs -->
+            <div class="faq-item" data-category="residential">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What types of residential projects do you handle?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We specialize in luxury apartments, independent villas, residential complexes, townhouses, and custom homes. Our residential projects range from 2BHK apartments to large luxury villas with premium amenities.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="residential">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you provide design services for residential projects?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We have in-house architects and interior designers who provide complete design services including architectural planning, 3D visualization, interior design, and landscape design. We work closely with you to bring your vision to life.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="residential">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What is included in residential construction?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Our residential construction includes site preparation, foundation work, structural work, plumbing, electrical, HVAC, flooring, painting, woodwork, and all finishing work. We also handle government approvals and provide a 10-year structural warranty.
+                </div>
+            </div>
+
+            <!-- Commercial FAQs -->
+            <div class="faq-item" data-category="commercial">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What commercial projects do you undertake?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We handle office towers, retail spaces, shopping malls, corporate campuses, hotels, hospitals, educational institutions, and mixed-use developments. Our commercial expertise spans from small office renovations to large-scale commercial complexes.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="commercial">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can you work with existing tenants during renovation?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we specialize in occupied building renovations with minimal disruption. We work in phases, schedule work during off-hours, and maintain strict safety protocols to ensure your business operations continue smoothly.
+                </div>
+            </div>
+
+            <!-- Pricing FAQs -->
+            <div class="faq-item" data-category="pricing">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How much does construction cost per square foot?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Construction costs vary based on location, design complexity, materials, and finishes. Residential construction typically ranges from ₹1,800 to ₹3,500+ per sq ft. Commercial projects range from ₹2,000 to ₹4,000+ per sq ft. Use our online estimator for a quick approximation, or contact us for a detailed quote based on your specific requirements.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="pricing">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you provide free estimates?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we provide free initial consultations and estimates. Our team will visit your site, understand your requirements, and provide a detailed quotation with transparent cost breakdowns. Use our online estimator for instant approximate costs.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="pricing">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What payment terms do you offer?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We typically work on a milestone-based payment structure: 10% advance, 30% on completion of foundation, 30% on structural completion, 20% on finishing work, and 10% on final handover. Terms can be customized based on project requirements.
+                </div>
+            </div>
+
+            <!-- Timeline FAQs -->
+            <div class="faq-item" data-category="timeline">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How long does a typical residential project take?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    A standard residential home (2000-3000 sq ft) takes approximately 12-18 months from groundbreaking to completion. Smaller projects may take 8-10 months, while luxury villas can take 18-24 months. Timeline depends on design complexity, approvals, and weather conditions.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="timeline">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What factors can delay a construction project?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Common delays include: government approval delays, monsoon season, design changes, material shortages, site access issues, and unforeseen ground conditions. We build buffer time into our schedules and maintain transparent communication about any potential delays.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="timeline">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I track my project progress?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! We provide regular project updates through site visits, progress photos, video walkthroughs, and detailed reports. Our project managers are available for consultations, and you can visit the site at scheduled times to monitor progress firsthand.
+                </div>
+            </div>
+
+            <!-- More General FAQs -->
+            <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Do you handle government approvals and permits?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we handle all necessary government approvals, building permits, NOCs, and legal documentation. Our team is experienced with local regulations and works with municipal authorities to ensure full compliance.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What warranty do you provide?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    We provide a 10-year structural warranty on all our construction projects. Additionally, we offer 1-year warranty on finishing work and fittings, and 2-year warranty on electrical and plumbing systems. Extended warranties are available for premium materials.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Are you licensed and insured?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, Mokal Builder is fully licensed, bonded, and insured. We carry comprehensive liability insurance, workers' compensation, and project insurance. All our certifications and licenses are available for review.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="general">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>How do I get started with my project?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    Getting started is easy! Contact us through our website, phone, or WhatsApp. Schedule a free consultation where we discuss your vision, budget, and timeline. We'll conduct a site visit, prepare a proposal, and guide you through every step of the process.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <h2>Still Have Questions?</h2>
+        <p>Our team is here to help. Get in touch for personalized answers to your construction queries.</p>
+        <a href="html/contact.html" class="btn-primary">Contact Us Today</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>About Mokal Builder</h4>
+                <p style="margin-bottom: 15px;">Leading construction and real estate development company specializing in luxury residential and commercial projects, real estate development, and land development with 15+ years of excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 8px;"><a href="html/index">Home</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/about.html">About</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/portfolio.html">Portfolio</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/faq.html">FAQ</a></li>
+                    <li><a href="html/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Residential</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Commercial</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Real Estate Development</a></li>
+                    <li><a href="html/services.html">Land Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p style="margin-bottom: 8px;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i>+91-9876543210</p>
+                <p style="margin-bottom: 8px;">📧 info@mokalbuilder.com</p>
+                <p style="margin-bottom: 15px;">📍 Mumbai, India</p>
+                <p style="margin-top: 15px;"><a href="html/privacy.html">Privacy Policy</a> | <a href="html/terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mokal Builder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const allItems = document.querySelectorAll('.faq-item');
+            
+            // Close all other items
+            allItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            faqItem.classList.toggle('active');
+        }
+
+        function filterFAQ(category) {
+            const items = document.querySelectorAll('.faq-item');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter items
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
+
+

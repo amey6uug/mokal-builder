@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Cost Estimator | Instant Construction Quote Calculator | Mokal Builder</title>
+    <meta name="description" content="Get instant construction cost estimates with Mokal Builder's project calculator. Calculate approximate costs for residential, commercial, renovation, and interior design projects in seconds.">
+    <meta name="keywords" content="construction cost estimator, project cost calculator, building quote calculator, residential construction cost, commercial construction estimate, renovation cost calculator, mokal builder">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0F2B5A;
+            --primary-dark: #0A1A35;
+            --primary-light: #1e40af;
+            --accent: #F5A623;
+            --accent-light: #f8b75e;
+            --bg-white: #ffffff;
+            --bg-light: #F9FAFB;
+            --bg-lighter: #F9FAFB;
+            --text-dark: #111827;
+            --text-gray: #4B5563;
+            --text-light-gray: #6b7280;
+            --border-gray: #E5E7EB;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+            padding: 18px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+            padding: 12px 0;
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--bg-white);
+            font-size: 1.2rem;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--bg-white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(15, 43, 90, 0.2);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.2);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 50%, #fff8f0 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(15, 43, 90, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 166, 35, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--bg-white), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 80px 40px;
+            background: var(--bg-white);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 2px;
+        }
+
+        /* ESTIMATOR CONTAINER */
+        .estimator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .estimator-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* FORM SECTION */
+        .estimator-form {
+            background: var(--bg-lighter);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(15, 43, 90, 0.08);
+        }
+
+        .estimator-form h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .estimator-intro {
+            margin-bottom: 25px;
+            padding: 16px 18px;
+            border-left: 4px solid var(--accent);
+            background: rgba(245, 166, 35, 0.08);
+            border-radius: 8px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .range-group {
+            margin-bottom: 25px;
+        }
+
+        .range-group label {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .range-value {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .bill-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .summary-chip {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .summary-chip span {
+            display: block;
+            font-size: 0.78rem;
+            opacity: 0.8;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .summary-chip strong {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            background: var(--border-gray);
+            border-radius: 3px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2);
+        }
+
+        /* RESULTS SECTION */
+        .estimator-results {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 40px;
+            border-radius: 10px;
+            color: var(--bg-white);
+            position: sticky;
+            top: 100px;
+            box-shadow: 0 20px 40px rgba(15, 43, 90, 0.2);
+        }
+
+        .estimator-results h3 {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .bill-structure-note {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 22px;
+            color: rgba(255, 255, 255, 0.82);
+        }
+
+        .bill-table-wrap {
+            overflow-x: auto;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .bill-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 560px;
+        }
+
+        .bill-table th,
+        .bill-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            vertical-align: top;
+        }
+
+        .bill-table th {
+            text-align: left;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.78);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .bill-table td {
+            font-size: 0.95rem;
+        }
+
+        .bill-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .bill-item-note {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 1.45;
+        }
+
+        .amount-cell,
+        .rate-cell,
+        .qty-cell,
+        .unit-cell {
+            white-space: nowrap;
+        }
+
+        .result-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .estimate-total {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .estimate-label {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .estimate-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .estimate-note {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary);
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            margin-top: 25px;
+        }
+
+        .btn-submit:hover {
+            background: var(--bg-white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--bg-white);
+            padding: 60px 40px 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid rgba(245, 166, 35, 0.3);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* WHATSAPP */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(37, 211, 102, 0.6); }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="/images/logos/logo.jpg" alt="Mokal Builder Logo"></div>
+                <div class="logo-text">
+                    <h1>Mokal Builder</h1>
+                    <p>PREMIUM CONSTRUCTIONS</p>
+                </div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="html/services.html" class="nav-link">Services</a>
+                <a href="html/about.html" class="nav-link">About</a>
+                <a href="html/portfolio.html" class="nav-link">Portfolio</a>
+                <a href="html/faq.html" class="nav-link">FAQ</a>
+                <a href="html/contact.html" class="nav-link">Contact</a>
+                <a href="html/estimator.html" class="btn-nav">Get Estimate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Project Estimator</h1>
+            <p class="hero-description">Get an Instant Quote for Your Construction Project</p>
+        </div>
+    </section>
+
+    <!-- ESTIMATOR -->
+    <section class="section">
+        <h2 class="section-title">Detailed Cost Structure</h2>
+        
+        <!-- DISCLAIMER -->
+        <div style="max-width: 1200px; margin: 0 auto 40px; padding: 20px; background: #FFF3CD; border-left: 4px solid #FFC107; border-radius: 8px;">
+            <h4 style="color: #856404; margin-bottom: 10px; font-size: 1.1rem;">⚠️ Important Disclaimer</h4>
+            <p style="color: #856404; font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                <strong>Please Note:</strong> The estimates provided by this calculator are approximate and for informational purposes only. 
+                Actual project costs may vary based on site conditions, material availability, design complexity, location, labor costs, and market fluctuations. 
+                The pricing below is based on the bill structure you shared and scales with project size and finish level.
+                This tool does NOT constitute a binding quote or contractual agreement. For an accurate quote, please schedule a consultation and site inspection with our team. 
+                Mokal Builder is not liable for any decisions made based solely on these estimates.
+            </p>
+        </div>
+        
+        <div class="estimator-container">
+            <!-- FORM -->
+            <form class="estimator-form" onsubmit="handleSubmit(event)">
+                <h3>Your Project Details</h3>
+                <div class="estimator-intro">
+                    Use the controls below to scale the reference bill structure into a project estimate. The right panel updates the itemized cost structure live.
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Type *</label>
+                    <select id="service" onchange="calculateEstimate()" required>
+                        <option value="">Select Service</option>
+                        <option value="residential">Residential Construction</option>
+                        <option value="commercial">Commercial Construction</option>
+                        <option value="renovation">Renovation & Remodeling</option>
+                        <option value="interior">Interior Design</option>
+                    </select>
+                </div>
+
+                <div class="range-group">
+                    <label for="area">
+                        Project Size (Sq.Ft)
+                        <span class="range-value" id="areaValue">1000</span>
+                    </label>
+                    <input type="range" id="area" min="500" max="5000" value="1000" step="50" oninput="updateAreaValue(); calculateEstimate()">
+                </div>
+
+                <div class="form-group">
+                    <label for="quality">Quality Level *</label>
+                    <select id="quality" onchange="calculateEstimate()" required>
+                        <option value="">Select Quality</option>
+                        <option value="standard">Standard Finish</option>
+                        <option value="premium">Premium Finish</option>
+                        <option value="luxury">Luxury Finish</option>
+                    </select>
+                </div>
+
+                <div class="range-group">
+                    <label for="timeline">
+                        Timeline (Months)
+                        <span class="range-value" id="timelineValue">12</span>
+                    </label>
+                    <input type="range" id="timeline" min="3" max="36" value="12" step="1" oninput="updateTimelineValue()">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Your name here">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+91-XXXXXXXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="your.email@example.com">
+                </div>
+
+                <button type="submit" class="btn-submit">Send Me Detailed Quote</button>
+            </form>
+
+            <!-- RESULTS -->
+            <div class="estimator-results">
+                <h3>📊 Itemized Bill Structure</h3>
+                <p class="bill-structure-note">
+                    Reference bill structure based on your shared estimate. Values scale with area and finish level so you can use it as a live estimator for different project sizes.
+                </p>
+
+                <div class="bill-summary">
+                    <div class="summary-chip">
+                        <span>Project Area</span>
+                        <strong id="summaryReferenceArea">1,000 Sq.Ft</strong>
+                    </div>
+                    <div class="summary-chip">
+                        <span>Scale Factor</span>
+                        <strong id="summaryScaleFactor">1.00x</strong>
+                    </div>
+                    <div class="summary-chip">
+                        <span>Packages</span>
+                        <strong id="summaryPackages">6</strong>
+                    </div>
+                </div>
+
+                <div class="bill-table-wrap">
+                    <table class="bill-table">
+                        <thead>
+                            <tr>
+                                <th>Sr.</th>
+                                <th>Item Description</th>
+                                <th>Qty</th>
+                                <th>Unit</th>
+                                <th>Rate</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="billBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="estimate-total">
+                    <div class="estimate-label">TOTAL ESTIMATED COST</div>
+                    <div class="estimate-amount" id="resultTotal">₹0</div>
+                    <div class="estimate-note">
+                        ✓ Includes the reference cost structure you shared<br>
+                        ✓ Scales with project size and finish level<br>
+                        ✓ Final quote will depend on site inspection and exact scope
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>About Mokal Builder</h4>
+                <p style="margin-bottom: 15px;">Leading construction and real estate development company specializing in luxury residential and commercial projects, real estate development, and land development with 15+ years of excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 8px;"><a href="html/index">Home</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/about.html">About</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/portfolio.html">Portfolio</a></li>
+                    <li><a href="html/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Residential</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Commercial</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Renovation</a></li>
+                    <li><a href="html/services.html">More Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p style="margin-bottom: 8px;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i>+91-9876543210</p>
+                <p style="margin-bottom: 8px;">📧 info@mokalbuilder.com</p>
+                <p>📍 Mumbai, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mokal Builder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        const referenceArea = 1000;
+        const estimateRows = [
+            {
+                description: 'Civil works and ceiling package',
+                note: 'False ceiling, electrical points, MCB, earthing, distribution box, and exterior point work.',
+                qty: 1,
+                unit: 'lot',
+                amount: 585982.48
+            },
+            {
+                description: 'Curtains and window treatment package',
+                note: 'Rolling curtains and finish matching as per design and color selection.',
+                qty: 1,
+                unit: 'lot',
+                amount: 39985.00
+            },
+            {
+                description: 'Chair and seating package',
+                note: 'Office, operator, clerk, and client seating grouped as one package.',
+                qty: 1,
+                unit: 'lot',
+                amount: 120000.00
+            },
+            {
+                description: 'CCTV and security package',
+                note: 'Night mode camera system with DVR and recording setup.',
+                qty: 1,
+                unit: 'lot',
+                amount: 48000.00
+            },
+            {
+                description: 'Furniture and joinery package',
+                note: 'Tables, credenza, display, cabinet, partition, seating, and bench work.',
+                qty: 1,
+                unit: 'lot',
+                amount: 138353.00
+            },
+            {
+                description: 'Painting and finish package',
+                note: 'Putty, luster finish, and paint coverage as per the shared bill structure.',
+                qty: 1,
+                unit: 'lot',
+                amount: 62925.00
+            }
+        ];
+
+        function getServiceFactor() {
+            const service = document.getElementById('service').value;
+            const factors = {
+                residential: 1.00,
+                commercial: 1.10,
+                renovation: 0.95,
+                interior: 1.08
+            };
+
+            return factors[service] || 1.00;
+        }
+
+        function getQualityFactor() {
+            const quality = document.getElementById('quality').value;
+            const factors = {
+                standard: 1.00,
+                premium: 1.18,
+                luxury: 1.35
+            };
+
+            return factors[quality] || 1.00;
+        }
+
+        function getScaleFactor() {
+            const area = parseFloat(document.getElementById('area').value) || referenceArea;
+            const areaFactor = area / referenceArea;
+            return areaFactor * getServiceFactor() * getQualityFactor();
+        }
+
+        function updateAreaValue() {
+            const area = document.getElementById('area').value;
+            document.getElementById('areaValue').textContent = Number(area).toLocaleString();
+        }
+
+        function updateTimelineValue() {
+            const timeline = document.getElementById('timeline').value;
+            document.getElementById('timelineValue').textContent = timeline;
+        }
+
+        function calculateEstimate() {
+            const area = parseInt(document.getElementById('area').value) || 1000;
+            const scaleFactor = getScaleFactor();
+            const billBody = document.getElementById('billBody');
+            const total = estimateRows.reduce((sum, row) => sum + (row.amount * scaleFactor), 0);
+
+            billBody.innerHTML = estimateRows.map((row, index) => {
+                const rate = row.amount * scaleFactor;
+                const amount = row.amount * scaleFactor;
+
+                return `
+                    <tr>
+                        <td class="qty-cell">${index + 1}</td>
+                        <td>
+                            ${row.description}
+                            <span class="bill-item-note">${row.note}</span>
+                        </td>
+                        <td class="qty-cell">${row.qty.toLocaleString('en-IN')}</td>
+                        <td class="unit-cell">${row.unit}</td>
+                        <td class="rate-cell">₹${rate.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                        <td class="amount-cell">₹${amount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            document.getElementById('summaryReferenceArea').textContent = area.toLocaleString('en-IN') + ' Sq.Ft';
+            document.getElementById('summaryScaleFactor').textContent = scaleFactor.toFixed(2) + 'x';
+            document.getElementById('summaryPackages').textContent = estimateRows.length.toString();
+            document.getElementById('resultTotal').textContent = '₹' + total.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const service = document.getElementById('service').value;
+            const quality = document.getElementById('quality').value;
+            const total = document.getElementById('resultTotal').textContent;
+
+            // Validation checks
+            if (!service || !quality) {
+                alert('Please select both Service Type and Quality Level to calculate your estimate.');
+                return false;
+            }
+
+            if (name.length < 2) {
+                alert('Please enter a valid name (at least 2 characters).');
+                return false;
+            }
+
+            // Phone validation (Indian format)
+            const phoneRegex = /^[6-9]\d{9}$/;
+            const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+            if (!phoneRegex.test(cleanPhone) && cleanPhone.length !== 10) {
+                alert('Please enter a valid 10-digit Indian phone number.');
+                return false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            // All validations passed
+            alert(`Thank you ${name}! Your estimated quote is ${total}. We will contact you at ${phone} within 24 hours with a detailed breakdown.\n\nReminder: This is an approximate estimate based on the reference bill structure. Final costs will be determined after site inspection.`);
+            event.target.reset();
+            updateAreaValue();
+            updateTimelineValue();
+            calculateEstimate();
+            return true;
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Initialize on load
+        updateAreaValue();
+        updateTimelineValue();
+        calculateEstimate();
+    </script>
+</body>
+</html>
+
+
+
+
+

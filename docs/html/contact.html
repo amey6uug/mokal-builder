@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Get Free Construction Quote & Consultation | Mokal Builder Mumbai</title>
+    <meta name="description" content="Contact Mokal Builder for a free consultation and quote. Call +91-9876543210, email info@mokalbuilder.com, or visit our Mumbai office. We're here to help turn your construction dreams into reality. Response within 24 hours.">
+    <meta name="keywords" content="contact Mokal Builder, construction quote, free consultation, builder contact Mumbai, construction inquiry, get estimate, Mokal Builder phone, Mokal Builder email, construction company contact">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0F2B5A;
+            --primary-dark: #0A1A35;
+            --primary-light: #1e40af;
+            --accent: #F5A623;
+            --accent-light: #f8b75e;
+            --bg-white: #ffffff;
+            --bg-light: #F9FAFB;
+            --bg-lighter: #F9FAFB;
+            --text-dark: #111827;
+            --text-gray: #4B5563;
+            --text-light-gray: #6b7280;
+            --border-gray: #E5E7EB;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+            padding: 18px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+            padding: 12px 0;
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--bg-white);
+            font-size: 1.2rem;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--bg-white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(15, 43, 90, 0.2);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.2);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 50%, #fff8f0 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(15, 43, 90, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 166, 35, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--bg-white), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 80px 40px;
+            background: var(--bg-white);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90px, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 2px;
+        }
+
+        /* CONTACT GRID */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* CONTACT INFO */
+        .contact-info h3 {
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            background: var(--bg-lighter);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .info-label {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .info-content {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+        }
+
+        .info-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .info-content a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* CONTACT FORM */
+        .contact-form {
+            background: var(--bg-lighter);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-gray);
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .btn-submit {
+            padding: 16px 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--bg-white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+            width: 100%;
+            box-shadow: 0 6px 20px rgba(15, 43, 90, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-submit:hover::before {
+            left: 100%;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(15, 43, 90, 0.35);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--bg-white);
+            padding: 60px 40px 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            border-top: 2px solid rgba(245, 166, 35, 0.3);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* WHATSAPP */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(37, 211, 102, 0.6); }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><img src="/images/logos/logo.jpg" alt="Mokal Builder Logo"></div>
+                <div class="logo-text">
+                    <h1>Mokal Builder</h1>
+                    <p>PREMIUM CONSTRUCTIONS</p>
+                </div>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="html/services.html" class="nav-link">Services</a>
+                <a href="html/about.html" class="nav-link">About</a>
+                <a href="html/portfolio.html" class="nav-link">Portfolio</a>
+                <a href="html/faq.html" class="nav-link">FAQ</a>
+                <a href="html/contact.html" class="nav-link">Contact</a>
+                <a href="html/estimator.html" class="btn-nav">Get Estimate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Get in Touch</h1>
+            <p class="hero-description">Have Questions? Let's Connect and Discuss Your Project</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section">
+        <h2 class="section-title">Contact Information</h2>
+        
+        <div class="contact-grid">
+            <!-- CONTACT INFO -->
+            <div class="contact-info">
+                <h3>Reach Out to Us</h3>
+                
+                <div class="info-item">
+                    <div class="info-label"><i class="fas fa-phone"></i> Phone</div>
+                    <div class="info-content">
+                        <a href="tel:+919876543210">+91-9876543210</a>
+                        <p style="font-size: 0.9rem; color: var(--text-light-gray); margin-top: 5px;">Available 9 AM - 6 PM (Mon-Sun)</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">📧 Email</div>
+                    <div class="info-content">
+                        <a href="mailto:info@mokalbuilder.com">info@mokalbuilder.com</a>
+                        <p style="font-size: 0.9rem; color: var(--text-light-gray); margin-top: 5px;">Response within 24 hours</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label">📍 Address</div>
+                    <div class="info-content">
+                        Mokal Builder<br>
+                        Premium Construction Services<br>
+                        Mumbai, India
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-label"><i class="fab fa-whatsapp"></i> WhatsApp</div>
+                    <div class="info-content">
+                        <a href="https://wa.me/919876543210" target="_blank">Chat with us on WhatsApp</a>
+                        <p style="font-size: 0.9rem; color: var(--text-light-gray); margin-top: 5px;">Instant support & quick quotes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT FORM -->
+            <div class="contact-form">
+                <h3 style="font-size: 1.5rem; color: var(--text-dark); margin-bottom: 25px; font-weight: 700;">Send Us a Message</h3>
+                
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Type *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="residential">Residential Construction</option>
+                            <option value="commercial">Commercial Construction</option>
+                            <option value="renovation">Renovation & Remodeling</option>
+                            <option value="interior">Interior Design</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>About Mokal Builder</h4>
+                <p style="margin-bottom: 15px;">Leading construction and real estate development company specializing in luxury residential and commercial projects, real estate development, and land development with 15+ years of excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 8px;"><a href="html/index">Home</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/about.html">About</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/portfolio.html">Portfolio</a></li>
+                    <li><a href="html/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Residential</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Commercial</a></li>
+                    <li style="margin-bottom: 8px;"><a href="html/services.html">Real Estate Development</a></li>
+                    <li><a href="html/services.html">Land Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p style="margin-bottom: 8px;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i>+91-9876543210</p>
+                <p style="margin-bottom: 8px;">📧 info@mokalbuilder.com</p>
+                <p>📍 Mumbai, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mokal Builder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // Form validation and submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value.trim();
+            
+            // Validation checks
+            if (name.length < 2) {
+                alert('Please enter a valid name (at least 2 characters).');
+                return false;
+            }
+            
+            // Phone validation (Indian format)
+            const phoneRegex = /^[6-9]\d{9}$/;
+            const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+            if (!phoneRegex.test(cleanPhone) && cleanPhone.length !== 10) {
+                alert('Please enter a valid 10-digit Indian phone number.');
+                return false;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            
+            // Service selection validation
+            if (!service) {
+                alert('Please select a service type.');
+                return false;
+            }
+            
+            // Message validation
+            if (message.length < 10) {
+                alert('Please provide a more detailed message (at least 10 characters).');
+                return false;
+            }
+            
+            // Check for spam patterns (basic)
+            const spamKeywords = ['viagra', 'casino', 'lottery', 'prize won', 'click here now'];
+            const lowerMessage = message.toLowerCase();
+            const hasSpam = spamKeywords.some(keyword => lowerMessage.includes(keyword));
+            
+            if (hasSpam) {
+                alert('Your message contains suspicious content. Please revise and try again.');
+                return false;
+            }
+            
+            // All validations passed
+            alert('Thank you for your message! We will contact you within 24 hours.');
+            event.target.reset();
+            return true;
+        }
+
+        // Real-time phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 10) {
+                value = value.substring(0, 10);
+            }
+            e.target.value = value;
+        });
+
+        // Email validation on blur
+        document.getElementById('email').addEventListener('blur', function(e) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (e.target.value && !emailRegex.test(e.target.value)) {
+                e.target.style.borderColor = '#ef4444';
+            } else {
+                e.target.style.borderColor = '#E5E7EB';
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,184 @@
+<!-- TESTIMONIAL CARD COMPONENT -->
+<!-- Reusable testimonial card with avatar, rating, quote, and author info -->
+
+<!-- Usage: Copy this card structure for each testimonial -->
+<div class="testimonial-card">
+  <!-- Star Rating -->
+  <div class="testimonial-stars">
+    ★★★★★ <!-- Repeat or adjust star count -->
+  </div>
+
+  <!-- Testimonial Text -->
+  <p class="testimonial-text">
+    "Mokal Builder transformed our dream home into reality. Their attention to detail and professionalism throughout the project was exceptional. Highly recommended!"
+  </p>
+
+  <!-- Author Section -->
+  <div class="testimonial-author">
+    <img 
+      src="/images/team/avatar-1.jpg" 
+      alt="Rajesh Kumar" 
+      class="testimonial-avatar"
+      data-src="/images/team/avatar-1.jpg"
+    />
+    <div class="testimonial-info">
+      <h4>Rajesh Kumar</h4>
+      <p>Homeowner, Nagpur</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== TESTIMONIAL VARIATIONS ========== -->
+
+<!-- With Organization -->
+<div class="testimonial-card">
+  <div class="testimonial-stars">★★★★★</div>
+  <p class="testimonial-text">
+    "Working with Mokal Builder on our commercial project was seamless. They delivered on time and within budget. A reliable partner for any construction venture."
+  </p>
+  <div class="testimonial-author">
+    <img src="/images/team/avatar-2.jpg" alt="Priya Sharma" class="testimonial-avatar"/>
+    <div class="testimonial-info">
+      <h4>Priya Sharma</h4>
+      <p>Business Owner, Pune</p>
+    </div>
+  </div>
+</div>
+
+<!-- With Initials Avatar (No Image) -->
+<div class="testimonial-card">
+  <div class="testimonial-stars">★★★★☆</div>
+  <p class="testimonial-text">
+    "Great team to work with. They handled all the complexities of our renovation project with expertise and care. Would definitely recommend to anyone considering a renovation."
+  </p>
+  <div class="testimonial-author">
+    <div class="testimonial-avatar" style="background-color: #F5A623; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+      AK
+    </div>
+    <div class="testimonial-info">
+      <h4>Amit Kulkarni</h4>
+      <p>Homeowner, Aurangabad</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CSS STYLING ========== -->
+<!-- 
+.testimonial-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 300ms ease-in-out;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.testimonial-stars {
+  color: #F5A623;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: #4B5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #F5A623;
+}
+
+.testimonial-info h4 {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+.testimonial-info p {
+  font-size: 0.875rem;
+  color: #4B5563;
+  margin-bottom: 0;
+}
+-->
+
+<!-- ========== JAVASCRIPT INTEGRATION ========== -->
+<!-- Images use lazy loading via data-src attribute:
+     - Original src attribute for fallback
+     - data-src for lazy loading
+     - main.js handles lazy loading with IntersectionObserver
+-->
+
+<!-- ========== ACCESSIBILITY FEATURES ========== -->
+<!-- - Proper alt text on images
+     - Semantic heading (h4) for author names
+     - Star ratings using Unicode characters
+     - Screen reader friendly
+-->
+
+<!-- ========== SLIDER INTEGRATION ========== -->
+<!-- To create a testimonials carousel:
+
+<div class="testimonials-slider">
+  <div class="slider-container">
+    <div class="testimonial-card">...</div>
+    <div class="testimonial-card">...</div>
+    <div class="testimonial-card">...</div>
+  </div>
+  <button class="prev">❮</button>
+  <button class="next">❯</button>
+</div>
+
+JavaScript initialization:
+new ImageSlider('.testimonials-slider');
+-->
+
+<!-- ========== DATA ATTRIBUTES ========== -->
+<!-- Add data attributes for tracking and analytics:
+     data-client-id="rajesh-kumar"
+     data-project-type="residential"
+     data-rating="5"
+     data-date="2024-01-15"
+-->
+
+<!-- ========== VARIATIONS BY RATING ========== -->
+<!--
+5 Stars: ★★★★★
+4 Stars: ★★★★☆
+3 Stars: ★★★☆☆
+2 Stars: ★★☆☆☆
+1 Star:  ★☆☆☆☆
+-->
+
+<!-- ========== CUSTOMIZATION CHECKLIST ========== -->
+<!-- 
+□ Update testimonial text with real client feedback
+□ Add client name and location
+□ Upload client avatar image
+□ Set correct star rating (1-5)
+□ Update alt text with client name
+□ Add data-src attribute for lazy loading
+□ Include organization/company name if applicable
+□ Add client title/profession for credibility
+□ Ensure images are optimized (WebP format)
+□ Add to sliders/carousels as needed
+□ Include in social proof sections
+□ Add to case study pages
+□ Include video testimonials (optional)
+-->
+
+
